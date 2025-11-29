@@ -24,7 +24,8 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
+
+  <header class="header">
       <div class="brand">
         <img src="assets/img/logo.png" alt="Logo Imprevisti FC" class="logo" width="48" height="48" />
         <div>
@@ -32,13 +33,24 @@
           <p class="subtitle">Pre‑partita e Mercato · Vanilla JS</p>
         </div>
       </div>
-      <nav class="tabs" role="tablist" aria-label="Modalità">
+
+      <!-- Bottone hamburger -->
+  <button id="navToggle"
+          class="nav-toggle"
+          aria-label="Apri/chiudi menu"
+          aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="tabs nav-menu" aria-label="Navigazione">
   <button class="tab" role="tab" aria-selected="true" data-mode="pre" id="tab-pre">Pre-partita</button>
   <button class="tab" role="tab" aria-selected="false" data-mode="mercato" id="tab-mercato">Mercato</button>
   <a class="tab" href="config.html" title="Configura catalogo">Catalogo</a>
-</nav>
+  </nav>
 
-    </header>
+  </header>
 
     <main class="grid">
       <section class="card">

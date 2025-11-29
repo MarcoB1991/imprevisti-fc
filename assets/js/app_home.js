@@ -145,6 +145,24 @@ function draw(){
 
 // ------- bind
 function bind(){
+    // --- Menu hamburger (index.html) ---
+  const navToggle = document.getElementById('navToggle');
+  const navMenu   = document.querySelector('.nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Chiudi il menu dopo aver cliccato un link / tab
+    navMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // Tabs (se presenti in index con questi id)
   $('#tab-pre')?.addEventListener('click', ()=>selectMode('pre'));
   $('#tab-mercato')?.addEventListener('click', ()=>selectMode('mercato'));

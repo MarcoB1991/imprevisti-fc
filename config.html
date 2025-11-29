@@ -11,20 +11,34 @@
 </head>
 <body>
   <div class="container">
+
     <header class="header">
-      <div class="brand">
-        <img src="assets/img/logo.png" alt="Logo" class="logo" width="40" height="40" />
-        <div>
-          <h1 class="title">Configura catalogo</h1>
-          <p class="subtitle">Crea / modifica imprevisti</p>
-        </div>
-      </div>
-      <nav class="tabs" role="tablist" aria-label="Modalità">
-        <button class="tab" role="tab" aria-selected="true" data-mode="pre">Pre‑partita</button>
-        <button class="tab" role="tab" aria-selected="false" data-mode="mercato">Mercato</button>
-        <a class="tab" href="index.html">Torna alla Home</a>
-      </nav>        
-    </header>
+  <div class="brand">
+    <img src="assets/img/logo.png" alt="Logo" class="logo" width="40" height="40" />
+    <div>
+      <h1 class="title">Configura catalogo</h1>
+      <p class="subtitle">Crea / modifica imprevisti</p>
+    </div>
+  </div>
+
+  <!-- Bottone hamburger -->
+  <button id="navToggle"
+          class="nav-toggle"
+          aria-label="Apri/chiudi menu"
+          aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu -->
+  <nav class="tabs nav-menu" role="tablist" aria-label="Modalità">
+    <button class="tab" role="tab" aria-selected="true" data-mode="pre">Pre-partita</button>
+    <button class="tab" role="tab" aria-selected="false" data-mode="mercato">Mercato</button>
+    <a class="tab" href="index.html">← Torna alla Home</a>
+  </nav>        
+</header>
+
 
     <section class="card">
       <div class="actions">

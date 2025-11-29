@@ -78,6 +78,23 @@ function addItem(){
 }
 
 function bind(){
+    // --- Menu hamburger (config.html) ---
+  const navToggle = document.getElementById('navToggle');
+  const navMenu   = document.querySelector('.nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    navMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        navMenu.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // Tab switching
   $$('.tab[role="tab"]').forEach(btn=>btn.addEventListener('click', ()=>{
     state.mode = btn.dataset.mode;
