@@ -1,126 +1,265 @@
 /* ====== LAYOUT & COMPONENT STRUCTURE ====================================== */
-.container{max-width:1200px; margin:auto; padding:24px}
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:24px;
+}
 
 /* Header */
-.header{display:flex; gap:16px; align-items:center; justify-content:space-between; margin-bottom:18px}
-.brand{display:flex; align-items:center; gap:12px}
-.logo{width:48px; height:48px; border-radius:10px; box-shadow:var(--shadow)}
-.title{font-size:20px; margin:0; font-weight:800; letter-spacing:.2px}
-.subtitle{margin:0; font-size:13px; color:var(--muted)}
+.header{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+}
+.title{
+  font-size:20px;
+  margin:0;
+  font-weight:800;
+  letter-spacing:.2px;
+}
+.subtitle{
+  margin:0;
+  font-size:13px;
+  color:var(--muted);
+}
 
 /* Tabs */
-.tabs{display:flex; gap:10px; flex-wrap:wrap}
+.tabs{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-left:auto;        /* spinge i bottoni verso destra su desktop */
+}
 .tab{
   border:2px solid var(--border);
-  background:linear-gradient(135deg, color-mix(in oklch, var(--panel) 92%, black 8%), color-mix(in oklch, var(--panel) 85%, black 15%));
+  background:linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--panel) 92%, black 8%),
+    color-mix(in oklch, var(--panel) 85%, black 15%)
+  );
   color:var(--text);
   padding:10px 14px;
   border-radius:12px;
   cursor:pointer;
   user-select:none;
-  transition:transform .15s ease, box-shadow .15s ease, background .2s ease;
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    background .2s ease;
 }
 .tab[aria-selected="true"]{
-  background:linear-gradient(135deg, color-mix(in oklch, var(--panel-2) 92%, black 8%), color-mix(in oklch, var(--panel) 88%, black 12%));
+  background:linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--panel-2) 92%, black 8%),
+    color-mix(in oklch, var(--panel) 88%, black 12%)
+  );
   box-shadow:var(--ring);
 }
-.tab:hover{ transform:translateY(-1px) }
+.tab:hover{
+  transform:translateY(-1px);
+}
 
 /* Grid */
-.grid{display:grid; grid-template-columns:1.05fr .95fr; gap:18px}
-@media (max-width:1050px){ .grid{grid-template-columns:1fr} }
+.grid{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:18px;
+}
+@media (max-width:1050px){
+  .grid{grid-template-columns:1fr;}
+}
 
 /* Cards */
 .card{
-  background:
-    linear-gradient(180deg, color-mix(in oklch, var(--panel) 98%, black 2%), color-mix(in oklch, var(--panel) 90%, black 10%));
+  background:linear-gradient(
+    180deg,
+    color-mix(in oklch, var(--panel) 98%, black 2%),
+    color-mix(in oklch, var(--panel) 90%, black 10%)
+  );
   border:1px solid var(--border);
-  border-radius:16px; padding:16px; box-shadow:var(--shadow)
+  border-radius:16px;
+  padding:16px;
+  box-shadow:var(--shadow);
 }
-.card h2{margin:4px 0 12px; font-size:16px; letter-spacing:.2px; font-weight:700}
+.card h2{
+  margin:4px 0 12px;
+  font-size:16px;
+  letter-spacing:.2px;
+  font-weight:700;
+}
 
 /* Controls */
-.controls{display:grid; grid-template-columns:1fr 1fr; gap:12px}
-@media (max-width:640px){ .controls{grid-template-columns:1fr} }
-.row{
-  display:flex; align-items:center; justify-content:space-between; gap:8px;
-  padding:10px 12px; border:1px solid var(--border); border-radius:12px;
-  background:color-mix(in oklch, var(--panel) 88%, black 12%)
+.controls{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
 }
-input, select{
-  width:100%; background:color-mix(in oklch, var(--panel) 80%, black 20%);
-  color:var(--text); border:1px solid var(--border); border-radius:10px; padding:10px
+@media (max-width:640px){
+  .controls{grid-template-columns:1fr;}
+}
+.row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:color-mix(in oklch, var(--panel) 88%, black 12%);
+}
+input,
+select{
+  width:100%;
+  background:color-mix(in oklch, var(--panel) 80%, black 20%);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:10px;
 }
 
 /* Actions */
-.actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:12px}
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:12px;
+}
 
 /* Result – più grande e con watermark logo */
 .result{
   position:relative;
-  display:flex; flex-direction:column; gap:10px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
   border:1px dashed color-mix(in oklch, var(--border) 70%, black 30%);
-  border-radius:14px; padding:16px;
+  border-radius:14px;
+  padding:16px;
   background:
-    radial-gradient(600px 300px at 90% -20%, color-mix(in oklch, var(--gold-2) 10%, transparent), transparent),
+    radial-gradient(
+      600px 300px at 90% -20%,
+      color-mix(in oklch, var(--gold-2) 10%, transparent),
+      transparent
+    ),
     color-mix(in oklch, var(--panel) 85%, black 15%);
   min-height:180px;
 }
 .result::before{
-  content:""; position:absolute; inset:auto 12px 12px auto; width:150px; height:150px; opacity: .30;
+  content:"";
+  position:absolute;
+  inset:auto 12px 12px auto;
+  width:150px;
+  height:150px;
+  opacity:.30;
   pointer-events:none;
 }
-.result h3{font-size:20px; margin:2px 0}
+.result h3{
+  font-size:20px;
+  margin:2px 0;
+}
 
 /* Saved list */
-.stack{display:flex; gap:8px; flex-wrap:wrap}
-.list{display:flex; flex-direction:column; gap:10px; max-height:520px; overflow:auto; padding-right:6px}
+.stack{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-height:520px;
+  overflow:auto;
+  padding-right:6px;
+}
 .item{
-  display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center;
-  background:color-mix(in oklch, var(--panel) 82%, black 18%); border:1px solid var(--border); border-radius:12px; padding:10px
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:10px;
+  align-items:center;
+  background:color-mix(in oklch, var(--panel) 82%, black 18%);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px;
 }
 
 /* Mega action (bottone “Estrai Imprevisto” in stile card con immagine) */
 .mega-action{
-  display:block; width:100%;
-  border:2px solid var(--border); border-radius:16px; overflow:hidden;
+  display:block;
+  width:100%;
+  border:2px solid var(--border);
+  border-radius:16px;
+  overflow:hidden;
   background:
     linear-gradient(0deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
     url("../img/hero-extract.jpg") center/cover no-repeat;
   min-height:340px;
   padding:20px;
   box-shadow:var(--shadow);
-  transition:transform .18s ease, box-shadow .18s ease, filter .25s ease;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .25s ease;
 }
-
 .mega-action .mega-title{
-  font-weight:800; font-size:18px; letter-spacing:.3px; margin:0 0 6px;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:.3px;
+  margin:0 0 6px;
   color:#fff;
 }
-.mega-action .mega-sub{ color:#f1f5f9; font-size:13px; margin:0 }
+.mega-action .mega-sub{
+  color:#f1f5f9;
+  font-size:13px;
+  margin:0;
+}
 
 /* Spaziatura coerente per pulsanti a tutta riga */
-.full-row{display:block; width:100%}
+.full-row{
+  display:block;
+  width:100%;
+}
 
 /* --- Navbar mobile fix ---
    Spinge i bottoni (tabs) verso destra negli schermi piccoli
 */
-@media (max-width: 600px) {
+@media (max-width:600px){
 
-  .header {
-    flex-direction: column;
-    align-items: stretch; /* full width */
-    gap: 10px;
+  .container{
+    padding:16px;
   }
 
-  .tabs {
-    justify-content: flex-end !important;   /* allinea a destra */
-    width: 100%;                            /* prende tutta la riga */
-    display: flex;
-    flex-wrap: wrap;
+  .header{
+    flex-direction:column;
+    align-items:flex-start;   /* brand a sinistra */
+    gap:10px;
   }
 
-  .tabs .tab {
-    margin-left: auto;                      /* spinge i bottoni a destra */
+  .brand{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .tabs{
+    width:100%;
+    margin-left:0;            /* annulla l’auto-margin del desktop */
+    justify-content:flex-end; /* bottoni schiacciati verso destra */
+  }
+
+  .tab{
+    padding:8px 10px;
+    font-size:12px;
   }
 }
