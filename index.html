@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imprevisti FC26 – Vanilla JS</title>
+  <meta name="description" content="Gestione imprevisti pre‑partita e mercato per la carriera allenatore in FC." />
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <meta name="theme-color" content="#0f1115">
+  <!-- Open Graph (modifica og:url quando pubblichi su GitHub Pages) -->
+  <meta property="og:title" content="Imprevisti FC – Vanilla JS">
+  <meta property="og:description" content="Estrai imprevisti pre-partita e di mercato per FC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://<TUO-UTENTE>.github.io/<TUO-REPO>/">
+  <meta property="og:image" content="assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="Logo Imprevisti FC" class="logo" width="48" height="48" />
+        <div>
+          <h1 class="title">Imprevisti FC</h1>
+          <p class="subtitle">Pre‑partita e Mercato · Vanilla JS</p>
+        </div>
+      </div>
+      <nav class="tabs" role="tablist" aria-label="Modalità">
+  <button class="tab" role="tab" aria-selected="true" data-mode="pre" id="tab-pre">Pre-partita</button>
+  <button class="tab" role="tab" aria-selected="false" data-mode="mercato" id="tab-mercato">Mercato</button>
+  <a class="tab" href="config.html" title="Configura catalogo">Catalogo</a>
+</nav>
+
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Estrazione</h2>
+        <div class="controls">
+          <div class="row">
+            <label for="seed">Seed (facoltativo)</label>
+            <input id="seed" type="text" placeholder="esempio..." />
+          </div>
+          <div class="row">
+            <label for="filter-text">Filtro testo</label>
+            <input id="filter-text" type="text" placeholder="cerca per titolo" />
+          </div>
+        </div>
+        <div class="actions">
+          <button id="save">Aggiungi alla Lista</button>
+          <button id="reset" class="danger">Svuota Lista</button>
+          <button id="export">Esporta JSON</button>
+          <button id="import">Importa JSON</button>
+        </div>
+        <br>
+        <div class="hero-row">
+        <button id="draw" class="mega-action full-row">
+          <h3 class="mega-title">Estrai Imprevisto</h3>
+            <p class="mega-sub">Clicca per generare un Imprevisto</p>
+        </button>
+        </div>
+      </section>
+
+      <aside class="card">
+  <h2>Imprevisto corrente</h2>
+  <div id="current" class="result" aria-live="polite">
+    <div class="muted">Nessun imprevisto ancora. Premi “Estrai Imprevisto”.</div>
+  </div>
+  <br>
+  <h2 class="mt">Lista Imprevisti</h2>
+  <div class="list" id="list"></div>
+  <div class="footer">
+    <div>Salvato localmente (localStorage).</div>
+    <div><a class="link" href="#" id="howto">Guida rapida</a></div>
+    <br>
+  </div>
+  <div class="row">
+            <label for="allow-duplicates">Consenti duplicati</label>
+            <select id="allow-duplicates">
+              <option value="si">Sì</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+</aside>
+
+      <!-- NUOVE CARD: RUOLO & NAZIONE -->
+      <section class="card">
+        <h2>Estrai Ruolo Giocatore</h2>
+        <button id="draw-role" class="mega-action"
+                style="background-image:url('assets/img/roles.png')">
+          <h3 class="mega-title">Estrai Ruolo</h3>
+          <p class="mega-sub">Clicca per ottenere un ruolo</p>
+        </button>
+        <div id="role-result" class="result" aria-live="polite" style="margin-top:10px">
+          <div class="muted">Nessun ruolo estratto.</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Estrai Nazione</h2>
+        <button id="draw-nation" class="mega-action"
+                style="background-image:url('assets/img/nations.png')">
+          <h3 class="mega-title">Estrai Nazione</h3>
+          <p class="mega-sub">Clicca per ottenere una nazione</p>
+        </button>
+        <div id="nation-result" class="result" aria-live="polite" style="margin-top:10px">
+          <div class="muted">Nessuna nazione estratta.</div>
+        </div>
+      </section>
+
+<div id="themeToggle" class="tab" title="Tema">Edited by Marco B. - 2025 / 2025</div>
+
+    </main>
+  </div>
+
+  <script type="module" src="assets/js/app_home.js"></script>
+</body>
+</html>

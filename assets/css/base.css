@@ -1,0 +1,54 @@
+/* ====== THEME TOKENS ======================================================= */
+/* Tema default: arancione + nero, accenti dorati */
+:root{
+  /* palette principali */
+  --orange-500:#ff7a00;   /* primario */
+  --orange-600:#e76a00;
+  --orange-700:#c85d00;
+
+  --black-900:#0d0f12;    /* secondario */
+  --black-800:#14171c;
+
+  /* accenti */
+  --gold-300:#e8d188;     /* dorato tenue per riflessi */
+  --gold-200:#f4e7b0;
+  --metal-400:#b7c0cc;    /* grigio metallico */
+  --metal-500:#8c95a3;
+
+  /* superfici / testi */
+  --bg: #ff7a00;          /* sfondo pagina (scuro ma caldo) */
+  --panel:#ff7a00;        /* card / pannelli */
+  --panel-2:#e8d188;
+  --text:#0d0f12;
+  --muted:#0d0f12;
+
+  /* bordi / bagliori */
+  --border: #2a3341;
+  --ring: 0 0 0 2px rgba(255,122,0,.25);
+  --glow-gold: 0 8px 30px rgba(232,209,136,.18);
+
+  /* gradienti di brand */
+  --grad-main: linear-gradient(135deg, var(--orange-500), #ffb556);
+  --grad-subtle: linear-gradient(180deg, rgba(255,181,86,.08), transparent);
+}
+
+/* ====== BASE =============================================================== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:
+    radial-gradient(900px 500px at 10% -5%, color-mix(in oklch, var(--gold-1) 14%, transparent), transparent),
+    radial-gradient(900px 500px at 120% 0%, color-mix(in oklch, var(--metal-1) 10%, transparent), transparent),
+    var(--bg);
+  color:var(--text);
+  font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial;
+}
+img{max-width:100%; display:block}
+:focus-visible{outline:var(--ring)}
+.muted{color:var(--muted)}
+.link{color:var(--secondary); text-decoration:none}
+.mt{margin-top:18px}
+.mt-sm{margin-top:10px}
+.small{font-size:12px}
+.scroll{overflow:auto}
