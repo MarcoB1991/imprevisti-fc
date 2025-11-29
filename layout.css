@@ -241,7 +241,7 @@ select{
    - brand (logo + titolo) in alto
    - tabs sotto, su una seconda riga
 */
-@media (max-width:600px){
+@media (max-width:500px){
 
   .header{
     flex-direction:column;      /* impila brand e navbar */
